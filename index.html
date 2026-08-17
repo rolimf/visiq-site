@@ -3,248 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Política de Privacidade — Visiq</title>
+  <title>Visiq — veja seu dinheiro com inteligência</title>
+  <meta name="description" content="Visiq — aplicativo de gestão financeira pessoal com modelagem correta de fatura de cartão de crédito por competência." />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #020B18; color: #F0EDE8; line-height: 1.7;
-      padding: 32px 24px; max-width: 720px; margin: 0 auto;
+      min-height: 100vh; display: flex; flex-direction: column;
+      padding: 32px 24px;
     }
-    header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid rgba(0,229,255,0.15); }
-    .brand { font-size: 40px; font-weight: 900; color: #00E5FF; letter-spacing: -1.5px; margin-bottom: 8px; }
-    .tagline { font-size: 14px; color: rgba(240,237,232,0.4); letter-spacing: 1px; }
-    h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
-    .updated { font-size: 13px; color: rgba(240,237,232,0.4); margin-bottom: 40px; }
-    h2 { font-size: 17px; font-weight: 700; color: #00E5FF; margin: 36px 0 12px; }
-    p { font-size: 15px; color: rgba(240,237,232,0.75); margin-bottom: 16px; }
-    ul { padding-left: 20px; margin-bottom: 16px; }
-    ul li { font-size: 15px; color: rgba(240,237,232,0.75); margin-bottom: 8px; }
-    a { color: #00E5FF; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .card { background: #041220; border: 1px solid rgba(0,229,255,0.1); border-radius: 16px; padding: 20px 24px; margin-bottom: 16px; }
-    .destaque { background: rgba(0,229,255,0.05); border-left: 3px solid #00E5FF; padding: 16px 20px; border-radius: 8px; margin-bottom: 16px; }
-    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 14px; }
-    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); color: rgba(240,237,232,0.75); }
-    th { color: #00E5FF; font-weight: 600; }
-    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 13px; color: rgba(240,237,232,0.3); }
+    .wrap { max-width: 640px; margin: 0 auto; width: 100%; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    header { text-align: center; margin-bottom: 48px; }
+    .brand { font-size: 56px; font-weight: 900; color: #00E5FF; letter-spacing: -2px; margin-bottom: 8px; }
+    .tagline { font-size: 15px; color: rgba(240,237,232,0.45); letter-spacing: 1px; }
+    .intro { text-align: center; margin-bottom: 44px; }
+    .intro p { font-size: 16px; color: rgba(240,237,232,0.7); margin-bottom: 14px; }
+    .destaque {
+      background: rgba(0,229,255,0.05); border-left: 3px solid #00E5FF;
+      padding: 18px 22px; border-radius: 8px; margin: 28px 0; text-align: left;
+    }
+    .destaque p { font-size: 15px; color: rgba(240,237,232,0.75); margin: 0; }
+    .links { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .link-card {
+      display: block; background: #041220; border: 1px solid rgba(0,229,255,0.12);
+      border-radius: 14px; padding: 16px 20px; text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .link-card:hover { border-color: rgba(0,229,255,0.35); }
+    .link-card .titulo { font-size: 15px; font-weight: 600; color: #00E5FF; margin-bottom: 2px; }
+    .link-card .desc { font-size: 13px; color: rgba(240,237,232,0.45); }
+    footer {
+      margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center; font-size: 13px; color: rgba(240,237,232,0.3);
+    }
+    footer a { color: rgba(240,237,232,0.45); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="brand">visiq</div>
-    <div class="tagline">veja seu dinheiro com inteligência</div>
-  </header>
+  <div class="wrap">
 
-  <h1>Política de Privacidade</h1>
-  <p class="updated">Última atualização: junho de 2026 · Versão 2.0</p>
+    <header>
+      <div class="brand">visiq</div>
+      <div class="tagline">veja seu dinheiro com inteligência</div>
+    </header>
 
-  <p>
-    Esta Política de Privacidade descreve como o <strong>Visiq</strong> ("aplicativo", "nós")
-    coleta, utiliza, armazena e protege os dados pessoais dos seus usuários, em conformidade
-    com a <strong>Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)</strong>
-    e o Marco Civil da Internet (Lei nº 12.965/2014).
-  </p>
-  <p>
-    Ao criar uma conta e utilizar o Visiq, você declara estar ciente e de acordo com as
-    práticas descritas neste documento.
-  </p>
+    <div class="intro">
+      <p>
+        Aplicativo de gestão financeira pessoal, feito para quem quer enxergar
+        não só onde gastou, mas para onde está indo.
+      </p>
 
-  <h2>1. Controlador dos dados e Encarregado</h2>
-  <p>
-    O Visiq é um aplicativo de gestão financeira pessoal desenvolvido e operado por
-    <strong>João Rolim</strong>, na qualidade de Controlador dos dados.
-  </p>
-  <p>
-    Em conformidade com o art. 41 da LGPD, o canal de contato para assuntos relacionados
-    à proteção de dados, incluindo o exercício de direitos do titular, é:
-  </p>
-  <div class="card">
-    <p style="margin:0;">
-      <strong>Encarregado pelo Tratamento de Dados (DPO)</strong><br />
-      João Rolim<br />
-      E-mail: <a href="mailto:contato@visiq.com.br">contato@visiq.com.br</a>
-    </p>
+      <div class="destaque">
+        <p>
+          <strong>Fatura de cartão do jeito certo.</strong> Suas compras aparecem
+          no mês em que realmente pesam na fatura — não na data em que você passou
+          o cartão. É a diferença entre saber quanto você deve e achar que sabe.
+        </p>
+      </div>
+
+      <p style="font-size: 14px; color: rgba(240,237,232,0.5);">
+        Seus dados bancários não saem do seu controle: o Visiq não se conecta
+        ao seu banco nem pede suas credenciais.
+      </p>
+    </div>
+
+    <div class="links">
+      <a class="link-card" href="/privacidade/">
+        <div class="titulo">Política de Privacidade</div>
+        <div class="desc">Como tratamos seus dados, em conformidade com a LGPD</div>
+      </a>
+      <a class="link-card" href="/termos/">
+        <div class="titulo">Termos de Uso</div>
+        <div class="desc">Condições de uso do aplicativo</div>
+      </a>
+      <a class="link-card" href="/excluir-conta/">
+        <div class="titulo">Excluir minha conta</div>
+        <div class="desc">Como apagar sua conta e todos os seus dados</div>
+      </a>
+    </div>
+
   </div>
-
-  <h2>2. Dados que coletamos</h2>
-  <div class="card">
-    <p><strong>Dados cadastrais</strong></p>
-    <ul>
-      <li>Nome e endereço de e-mail (fornecidos no cadastro)</li>
-      <li>Senha (armazenada de forma criptografada — nunca temos acesso ao texto da senha)</li>
-    </ul>
-  </div>
-  <div class="card">
-    <p><strong>Dados financeiros inseridos por você</strong></p>
-    <ul>
-      <li>Lançamentos (receitas, despesas, transferências)</li>
-      <li>Contas bancárias, saldos e tipos de conta</li>
-      <li>Cartões de crédito, limites, faturas e pagamentos</li>
-      <li>Categorias, objetivos financeiros e metas</li>
-      <li>Extratos importados em formato CSV</li>
-    </ul>
-    <p style="margin-top:12px; margin-bottom:0; font-size:14px; color:rgba(240,237,232,0.5);">
-      Importante: o Visiq <strong>não acessa suas contas bancárias diretamente</strong> nem se
-      conecta a instituições financeiras. Todos os dados financeiros são inseridos manualmente
-      por você ou importados a partir de arquivos que você mesmo exporta do seu banco.
-    </p>
-  </div>
-  <div class="card">
-    <p><strong>Dados técnicos</strong></p>
-    <ul>
-      <li>Identificador do dispositivo (token de notificações push)</li>
-      <li>Dados de uso e funcionamento do aplicativo</li>
-    </ul>
-  </div>
-
-  <h2>3. Bases legais para o tratamento</h2>
-  <p>
-    Nos termos do art. 7º da LGPD, tratamos seus dados pessoais com fundamento nas seguintes
-    bases legais:
-  </p>
-  <table>
-    <tr><th>Finalidade</th><th>Base legal (LGPD)</th></tr>
-    <tr><td>Criação e gestão da sua conta</td><td>Execução de contrato (art. 7º, V)</td></tr>
-    <tr><td>Funcionamento das ferramentas financeiras</td><td>Execução de contrato (art. 7º, V)</td></tr>
-    <tr><td>Notificações de vencimentos</td><td>Consentimento (art. 7º, I)</td></tr>
-    <tr><td>Melhoria do aplicativo e segurança</td><td>Legítimo interesse (art. 7º, IX)</td></tr>
-  </table>
-
-  <h2>4. Como usamos seus dados</h2>
-  <ul>
-    <li>Fornecer e manter as funcionalidades do aplicativo</li>
-    <li>Sincronizar seus dados de forma segura entre dispositivos</li>
-    <li>Enviar lembretes de vencimentos e alertas (mediante seu consentimento)</li>
-    <li>Garantir a segurança e a integridade da sua conta</li>
-    <li>Melhorar a experiência e desenvolver novas funcionalidades</li>
-  </ul>
-  <div class="destaque">
-    <p style="margin:0;">
-      <strong>Não vendemos, alugamos, cedemos nem compartilhamos seus dados financeiros
-      ou pessoais com terceiros para fins de marketing ou publicidade.</strong>
-      Seus dados existem exclusivamente para que o aplicativo funcione para você.
-    </p>
-  </div>
-
-  <h2>5. Inteligência Artificial</h2>
-  <p>
-    Funcionalidades premium do Visiq podem utilizar Inteligência Artificial para sugerir
-    categorias automaticamente e gerar análises sobre seus gastos. Nestes casos:
-  </p>
-  <ul>
-    <li>O processamento é feito apenas a seu pedido, ao usar a funcionalidade</li>
-    <li>As sugestões da IA podem ser sempre revisadas e ajustadas por você</li>
-    <li>Você não fica sujeito a decisões automatizadas que produzam efeitos jurídicos sem possibilidade de revisão (art. 20 da LGPD)</li>
-  </ul>
-
-  <h2>6. Compartilhamento com operadores</h2>
-  <p>
-    Para operar, o Visiq utiliza prestadores de serviço (operadores) que tratam dados em
-    nosso nome, sob contrato e obrigações de segurança:
-  </p>
-  <ul>
-    <li><strong>Supabase Inc.</strong> — infraestrutura de banco de dados e autenticação</li>
-    <li><strong>Expo / Google Firebase</strong> — envio de notificações push</li>
-  </ul>
-  <p>
-    Esses operadores tratam os dados estritamente conforme nossas instruções e não os
-    utilizam para finalidades próprias.
-  </p>
-
-  <h2>7. Onde seus dados são armazenados</h2>
-  <p>
-    Seus dados são armazenados em servidores do <strong>Supabase</strong> (banco de dados
-    PostgreSQL), localizados nos Estados Unidos (região Oregon). Esta transferência
-    internacional de dados é realizada nos termos do art. 33 da LGPD, sendo o Supabase
-    certificado <strong>SOC 2 Type II</strong> e adotando cláusulas e padrões de proteção
-    reconhecidos internacionalmente.
-  </p>
-
-  <h2>8. Segurança da informação</h2>
-  <p>
-    Adotamos medidas técnicas e administrativas para proteger seus dados (arts. 46 a 49 da LGPD):
-  </p>
-  <ul>
-    <li>Criptografia em trânsito (HTTPS/TLS) e em repouso (AES-256)</li>
-    <li>Autenticação segura com tokens e senhas protegidas por hashing (bcrypt)</li>
-    <li>Row Level Security (RLS): cada usuário acessa exclusivamente os próprios dados</li>
-    <li>Proteção de acesso local ao app por PIN e biometria (Face ID / impressão digital)</li>
-    <li>Uso exclusivo de chave pública anônima no aplicativo, sem permissões administrativas</li>
-  </ul>
-
-  <h2>9. Retenção e eliminação</h2>
-  <p>
-    Mantemos seus dados enquanto sua conta estiver ativa. Você pode solicitar a exclusão
-    da conta a qualquer momento. Após a solicitação, todos os seus dados pessoais e
-    financeiros serão eliminados permanentemente dos nossos servidores em até
-    <strong>30 dias</strong>, ressalvadas as hipóteses de guarda obrigatória previstas em lei.
-  </p>
-
-  <h2>10. Seus direitos como titular</h2>
-  <p>
-    Em conformidade com os arts. 9º e 18 da LGPD, você tem direito a, mediante identificação:
-  </p>
-  <ul>
-    <li>Confirmar a existência de tratamento dos seus dados</li>
-    <li>Acessar os dados que mantemos sobre você</li>
-    <li>Corrigir dados incompletos, inexatos ou desatualizados</li>
-    <li>Solicitar anonimização, bloqueio ou eliminação de dados desnecessários</li>
-    <li>Solicitar a portabilidade dos dados</li>
-    <li>Revogar o consentimento a qualquer momento</li>
-    <li>Obter informações sobre as entidades com as quais compartilhamos dados</li>
-  </ul>
-  <p>
-    Para exercer qualquer um desses direitos, escreva para
-    <a href="mailto:contato@visiq.com.br">contato@visiq.com.br</a>. Responderemos no prazo
-    legal aplicável.
-  </p>
-
-  <h2>11. Proteção de crianças e adolescentes</h2>
-  <p>
-    O Visiq destina-se a maiores de 18 anos e não coleta intencionalmente dados de menores.
-    Em linha com as diretrizes da ANPD e do Estatuto da Criança e do Adolescente, caso
-    identifiquemos o cadastro de um menor, procederemos com a exclusão imediata dos dados.
-    Pais ou responsáveis que identifiquem tal situação podem entrar em contato conosco.
-  </p>
-
-  <h2>12. Notificação de incidentes</h2>
-  <p>
-    Em caso de incidente de segurança que possa acarretar risco ou dano relevante aos
-    titulares, comunicaremos a Autoridade Nacional de Proteção de Dados (ANPD) e os
-    titulares afetados em prazo razoável, conforme o art. 48 da LGPD.
-  </p>
-
-  <h2>13. Notificações push</h2>
-  <p>
-    O Visiq pode enviar notificações para lembretes de vencimentos e alertas financeiros.
-    Você pode desativá-las a qualquer momento nas configurações do dispositivo, sem prejuízo
-    das demais funcionalidades.
-  </p>
-
-  <h2>14. Alterações nesta política</h2>
-  <p>
-    Esta política pode ser atualizada periodicamente. Mudanças significativas serão
-    comunicadas pelo e-mail cadastrado ou por aviso no aplicativo. A data de "última
-    atualização" no topo indica a revisão mais recente.
-  </p>
-
-  <h2>15. Contato</h2>
-  <div class="card">
-    <p style="margin:0;">
-      <strong>João Rolim</strong> — Desenvolvedor e Encarregado de Dados<br />
-      Visiq — Gestão Financeira Pessoal<br />
-      E-mail: <a href="mailto:contato@visiq.com.br">contato@visiq.com.br</a>
-    </p>
-  </div>
-  <p style="margin-top:24px; font-size:14px; color:rgba(240,237,232,0.5);">
-    Você também pode contatar diretamente a Autoridade Nacional de Proteção de Dados (ANPD)
-    através do site <a href="https://www.gov.br/anpd" target="_blank">gov.br/anpd</a>.
-  </p>
 
   <footer>
-    © 2026 Visiq. Todos os direitos reservados.
+    © 2026 Visiq · <a href="mailto:contato@visiq.com.br">contato@visiq.com.br</a>
   </footer>
 
 </body>
