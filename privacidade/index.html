@@ -38,7 +38,7 @@
   </header>
 
   <h1>Política de Privacidade</h1>
-  <p class="updated">Última atualização: setembro de 2026 · Versão 2.1</p>
+  <p class="updated">Última atualização: outubro de 2026 · Versão 2.2</p>
 
   <p>
     Esta Política de Privacidade descreve como o <strong>Visiq</strong> ("aplicativo", "nós")
@@ -82,8 +82,10 @@
       <li>Lançamentos (receitas, despesas, transferências)</li>
       <li>Contas bancárias, saldos e tipos de conta</li>
       <li>Cartões de crédito, limites, faturas e pagamentos</li>
-      <li>Categorias, objetivos financeiros e metas</li>
-      <li>Extratos importados em formato CSV</li>
+      <li>Categorias, orçamentos por categoria, objetivos financeiros e metas</li>
+      <li>Extratos importados em formato CSV ou PDF. O arquivo PDF é lido no próprio aparelho:
+        apenas os lançamentos que você confirmar são gravados, e o arquivo não é enviado a
+        nenhum servidor nem guardado</li>
     </ul>
     <p style="margin-top:12px; margin-bottom:0; font-size:14px; color:rgba(240,237,232,0.5);">
       Importante: hoje, todos os dados financeiros do Visiq são inseridos manualmente por você
@@ -96,9 +98,17 @@
     </p>
   </div>
   <div class="card">
+    <p><strong>Dados da assinatura</strong></p>
+    <ul>
+      <li>Plano contratado, data de validade e identificador da compra</li>
+      <li>Os dados do seu cartão ou meio de pagamento ficam com a Google — o Visiq nunca os recebe</li>
+    </ul>
+  </div>
+  <div class="card">
     <p><strong>Dados técnicos</strong></p>
     <ul>
-      <li>Dados de uso e funcionamento do aplicativo</li>
+      <li>Registro de quando um limite do plano gratuito é atingido (qual limite e há quantos dias a conta existe)</li>
+      <li>O Visiq não usa ferramentas de análise ou publicidade de terceiros</li>
     </ul>
   </div>
 
@@ -111,8 +121,10 @@
     <tr><th>Finalidade</th><th>Base legal (LGPD)</th></tr>
     <tr><td>Criação e gestão da sua conta</td><td>Execução de contrato (art. 7º, V)</td></tr>
     <tr><td>Funcionamento das ferramentas financeiras</td><td>Execução de contrato (art. 7º, V)</td></tr>
+    <tr><td>Cobrança e gestão da assinatura</td><td>Execução de contrato (art. 7º, V)</td></tr>
     <tr><td>Notificações de vencimentos</td><td>Consentimento (art. 7º, I)</td></tr>
     <tr><td>Melhoria do aplicativo e segurança</td><td>Legítimo interesse (art. 7º, IX)</td></tr>
+    <tr><td>Registro de limites do plano gratuito</td><td>Legítimo interesse (art. 7º, IX)</td></tr>
   </table>
 
   <h2>4. Como usamos seus dados</h2>
@@ -138,6 +150,10 @@
   </p>
   <ul>
     <li><strong>Supabase Inc.</strong> — infraestrutura de banco de dados e autenticação</li>
+    <li><strong>RevenueCat Inc.</strong> — gestão do estado da assinatura do plano Plus</li>
+    <li><strong>Resend</strong> — envio dos e-mails de confirmação de cadastro e de recuperação de senha</li>
+    <li><strong>Google</strong> — processamento do pagamento pela Google Play (a Google trata os dados
+      de pagamento também como controladora, conforme a política de privacidade dela)</li>
   </ul>
   <p>
     Esses operadores tratam os dados estritamente conforme nossas instruções e não os
@@ -150,7 +166,8 @@
     PostgreSQL), localizados nos Estados Unidos (região Oregon). Esta transferência
     internacional de dados é realizada nos termos do art. 33 da LGPD, sendo o Supabase
     certificado <strong>SOC 2 Type II</strong> e adotando cláusulas e padrões de proteção
-    reconhecidos internacionalmente.
+    reconhecidos internacionalmente. Os dados da assinatura são tratados também pela RevenueCat,
+    igualmente nos Estados Unidos, nas mesmas condições.
   </p>
 
   <h2>7. Segurança da informação</h2>
@@ -161,7 +178,7 @@
     <li>Criptografia em trânsito (HTTPS/TLS) e em repouso (AES-256)</li>
     <li>Autenticação segura com tokens e senhas protegidas por hashing (bcrypt)</li>
     <li>Row Level Security (RLS): cada usuário acessa exclusivamente os próprios dados</li>
-    <li>Proteção de acesso local ao app por PIN e biometria (Face ID / impressão digital)</li>
+    <li>Proteção de acesso local ao app por PIN e biometria do aparelho</li>
     <li>Uso exclusivo de chave pública anônima no aplicativo, sem permissões administrativas</li>
   </ul>
 
