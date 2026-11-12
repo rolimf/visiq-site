@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>E-mail confirmado — Visiq</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #020B18; color: #F0EDE8; line-height: 1.7;
+      min-height: 100vh; display: flex; flex-direction: column;
+      padding: 32px 24px;
+    }
+    .wrap { max-width: 520px; margin: 0 auto; width: 100%; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    header { text-align: center; margin-bottom: 40px; }
+    .wordmark { height: 52px; width: auto; margin-bottom: 8px; }
+    .tagline { font-size: 14px; color: rgba(240,237,232,0.4); letter-spacing: 1px; }
+    .card {
+      background: #041220; border: 1px solid rgba(0,229,255,0.15);
+      border-radius: 20px; padding: 32px 28px; text-align: center;
+    }
+    .card.erro { border-color: rgba(255,107,107,0.3); }
+    .icone { font-size: 44px; margin-bottom: 12px; }
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    p { font-size: 15px; color: rgba(240,237,232,0.75); margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+    .passos { text-align: left; margin: 20px 0 0; padding: 18px 20px; background: rgba(0,229,255,0.05); border-left: 3px solid #00E5FF; border-radius: 8px; }
+    .passos li { font-size: 14px; color: rgba(240,237,232,0.75); margin: 0 0 6px 18px; }
+    .passos li:last-child { margin-bottom: 0; }
+    a { color: #00E5FF; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    [hidden] { display: none !important; }
+    footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 13px; color: rgba(240,237,232,0.3); }
+    footer a { color: rgba(240,237,232,0.45); }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <header>
+      <img src="/assets/wordmark.png" alt="Visiq" class="wordmark" />
+      <div class="tagline">veja seu dinheiro com inteligência</div>
+    </header>
+
+    <!-- Sucesso: é o caso normal. O Supabase só redireciona para cá DEPOIS
+         de já ter confirmado o e-mail no servidor. -->
+    <div class="card" id="sucesso">
+      <div class="icone">✅</div>
+      <h1>E-mail confirmado!</h1>
+      <p>Sua conta Visiq está pronta.</p>
+      <ol class="passos">
+        <li>Volte ao aplicativo Visiq no seu celular ou tablet</li>
+        <li>Entre com o e-mail e a senha que você cadastrou</li>
+      </ol>
+      <p style="margin-top:20px; font-size:13px; color:rgba(240,237,232,0.45);">
+        Pode fechar esta página.
+      </p>
+    </div>
+
+    <!-- Erro: o Supabase devolve error/error_description no endereço quando
+         o link expirou ou já foi usado. -->
+    <div class="card erro" id="erro" hidden>
+      <div class="icone">⚠️</div>
+      <h1>Link expirado ou já usado</h1>
+      <p>
+        Este link de confirmação não é mais válido. Se você já confirmou
+        antes, é só abrir o Visiq e entrar normalmente.
+      </p>
+      <p>
+        Se ainda não consegue entrar, abra o Visiq e tente fazer login:
+        o aplicativo vai indicar se a conta precisa de confirmação.
+        Qualquer dúvida, escreva para
+        <a href="mailto:contato@visiq.com.br">contato@visiq.com.br</a>.
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <a href="/">Início</a> ·
+    <a href="/privacidade/">Política de Privacidade</a> ·
+    <a href="/termos/">Termos de Uso</a>
+  </footer>
+
+  <script>
+    (function () {
+      // O Supabase anexa tokens de sessão (#access_token=...) ou um erro
+      // (#error=... ou ?error=...) ao endereço. Esta página não usa os tokens:
+      // só decide qual mensagem mostrar e depois limpa o endereço, para os
+      // tokens não ficarem no histórico do navegador.
+      var hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+      var query = new URLSearchParams(window.location.search);
+      var temErro = hash.has('error') || hash.has('error_code') || query.has('error') || query.has('error_code');
+
+      if (temErro) {
+        document.getElementById('sucesso').hidden = true;
+        document.getElementById('erro').hidden = false;
+      }
+
+      if (window.location.hash || window.location.search) {
+        try {
+          history.replaceState(null, '', window.location.pathname);
+        } catch (e) { /* navegador antigo: segue sem limpar */ }
+      }
+    })();
+  </script>
+
+</body>
+</html>
